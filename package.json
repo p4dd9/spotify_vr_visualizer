@@ -1,0 +1,22 @@
+{
+  "name": "spotify_vr_visualizer",
+  "version": "1.0.0",
+  "description": "Audio VR-Visualization with Spotify WebAPI and A-Frame",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/p4dd9/spotify_vr_visualizer.git"
+  },
+  "author": "Patrick Obermueller",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/p4dd9/spotify_vr_visualizer/issues"
+  },
+  "homepage": "https://github.com/p4dd9/spotify_vr_visualizer#readme"
+}
