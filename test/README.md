@@ -1,3 +1,1 @@
-Silence is golden ;-)
-
-TODO: Write tests
+Write tests here
