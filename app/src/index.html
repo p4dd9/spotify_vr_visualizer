@@ -5,6 +5,9 @@
     <title>Hi</title>
 
     <script src="./index.js"></script>
+
+    <a-asset-item id="blob-a" src="./assets/objects/blob_a.obj"></a-asset-item>
+    <a-asset-item id="blob-b" src="./assets/objects/blob_b.obj"></a-asset-item>
 </head>
 
 <body>
@@ -46,6 +49,8 @@
         <a-entity entity-generator="mixin: sphere-dancer; num: 6"
                   layout="type: line; margin: 5; align: start" position="15 5 15" rotation="0 90 0">
         </a-entity>
+
+        <a-entity obj-model="obj: #blob-a;" src="./assets/objects/BlobALeuchten.png" position="15 5 15"></a-entity>
 
         <a-sky src="#sky" radius="10000"></a-sky>
     </a-scene>
