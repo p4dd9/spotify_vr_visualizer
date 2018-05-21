@@ -1,47 +1,42 @@
 import './stylesheets/main.scss'
-import './javascript/AudioContext'
 import 'aframe'
-import { registerDanceComponent } from './javascript/dance'
 import 'aframe-entity-generator-component'
 import 'aframe-layout-component'
+import * as util from 'javascript/utils'
+document.addEventListener('DOMContentLoaded', initVisualizer, false)
 
-registerDanceComponent()
+function initVisualizer() {
+  // HINT: webkitAudioContext is deprecated - Safari supports that too!!
+  let context = new window.AudioContext || null
 
-const AUDIO = new Audio()
-AUDIO.src = './audio/iom_speak_to_me_feat_kerri.mp3'
-AUDIO.controls = true
-AUDIO.loop = true
-AUDIO.autoplay = true
+  // Initialize analyser and set MediaSource for AudioContext
+  let analyser = context.createAnalyser()
+  let source = context.createMediaElementSource(util.injectAudioSource())
 
-document.addEventListener('DOMContentLoaded', function() {
-  initMP3()
-}, false)
-
-function initMP3() {
-  let source, context, analyser, fbc_array
-
-  document.getElementById('mp3_player').appendChild(AUDIO)
-  context = new AudioContext()
-  analyser = context.createAnalyser()
-
-  source = context.createMediaElementSource(AUDIO)
+  // Connect MediaSource as analyzer node
   source.connect(analyser)
   analyser.connect(context.destination)
 
+  // Get A-Frame components by ClassName
   const SPHERES = document.getElementsByClassName('sphere-dancer')
   const CUBES = document.getElementsByClassName('cube-dancer')
 
   frameLooper()
 
+  // Looping function for rendering
   function frameLooper() {
-    window.requestAnimationFrame(frameLooper) // looping function for animations
-    fbc_array = new Uint8Array(analyser.frequencyBinCount)
+    window.requestAnimationFrame(frameLooper)
+
+    // Get frequency domain data
+    let fbc_array = new Uint8Array(analyser.frequencyBinCount)
     analyser.getByteFrequencyData(fbc_array)
 
     updateScaleGeometry(SPHERES, fbc_array, 'sphere-dancer')
     updateScaleGeometry(CUBES, fbc_array, 'cube-dancer')
   }
 
+  // Update an array of A-Frame/DOMElements based on scaling properties
+  // and frequency domain data
   function updateScaleGeometry(objects, fbc_array, type) {
     for (let i = 0; i < objects.length; i++) {
       const BAR = objects[i]

@@ -5,17 +5,19 @@
     <title>Hi</title>
 
     <script src="./index.js"></script>
-
 </head>
+
 <body>
     <a-scene inspector="url: https://aframe.io/releases/0.3.0/aframe-inspector.min.js">
         <a-assets>
+            <img id="sky" src="./assets/images/sky.jpg">
+
             <a-mixin id="sphere-dancer" class="sphere-dancer" geometry="primitive: sphere"
-                     material="color: orange" height="3" radius="1" dance position="3 0 0">
+                     material="color: orange" height="3" radius="1" position="3 0 0">
             </a-mixin>
 
             <a-mixin id="cube-dancer" class="cube-dancer" geometry="primitive: box"
-                     material="color: blue" height="3" radius="1" dance position="3 0 0">
+                     material="color: blue" height="3" radius="1" position="3 0 0">
             </a-mixin>
         </a-assets>
 
@@ -24,26 +26,32 @@
         </a-entity>
 
         <a-entity entity-generator="mixin: sphere-dancer; num: 7"
-                  layout="type: line; margin: 5; align: start" position="-15 5 -15">
+                  layout="type: circle; radius: 5; angle: 50;" position="-15 5 -15">
+            <a-animation attribute="rotation" dur="5000" easing="linear"
+                         repeat="indefinite" to="0 360 360">
+            </a-animation>
         </a-entity>
 
-        <a-entity entity-generator="mixin: sphere-dancer; num: 5"
+        <a-entity entity-generator="mixin: sphere-dancer; num: 6"
                   layout="type: line; margin: 5; align: start" position="-15 5 15">
         </a-entity>
 
-        <a-entity entity-generator="mixin: cube-dancer; num: 7"
-                  layout="type: line; margin: 5; align: start" position="-15 5 15" rotation="0 90 0">
+        <a-entity entity-generator="mixin: cube-dancer; num: 30"
+                  layout="type: circle; radius: 10; angle: 30" position="-15 5 -15">
+            <a-animation attribute="rotation" dur="5000" easing="linear"
+                         repeat="indefinite" to="0 360 360">
+            </a-animation>
         </a-entity>
 
-        <a-entity entity-generator="mixin: sphere-dancer; num: 7"
+        <a-entity entity-generator="mixin: sphere-dancer; num: 6"
                   layout="type: line; margin: 5; align: start" position="15 5 15" rotation="0 90 0">
         </a-entity>
 
-        <!--<a-sphere class="dancer" color="blue" height="3" radius="1" dance position="9 0 0"></a-sphere>-->
-
-        <a-sky color="white"></a-sky>
+        <a-sky src="#sky" radius="10000"></a-sky>
     </a-scene>
 
-    <div id="mp3_player"></div>
+    <div id="audio-anchor">
+    </div>
+
 </body>
 </html>

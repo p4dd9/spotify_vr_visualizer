@@ -13,6 +13,10 @@ module.exports = {
     filename: 'index.js',
     path: PATHS.dist
   },
+  resolve: {
+    modules: ['node_modules', 'app/src'],
+    extensions: ['.js', '.scss', '.css', '.html']
+  },
   module: {
     rules: [
       {
@@ -37,7 +41,8 @@ module.exports = {
           }
         }
         ]
-      }]
+      }
+    ]
   },
   stats: {
     colors: true
@@ -51,11 +56,10 @@ module.exports = {
         to: `${PATHS.dist}/index.html`
       },
       {
-        from: `${PATHS.src}/audio`,
-        to: `${PATHS.dist}/audio`
+        from: `${PATHS.src}/assets`,
+        to: `${PATHS.dist}/assets`
       }
     ])
-
   ],
   devtool: 'source-map'
 }
