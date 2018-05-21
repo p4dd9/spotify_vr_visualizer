@@ -6,8 +6,6 @@
 
     <script src="./index.js"></script>
 
-    <a-asset-item id="blob-a" src="./assets/objects/blob_a.obj"></a-asset-item>
-    <a-asset-item id="blob-b" src="./assets/objects/blob_b.obj"></a-asset-item>
 </head>
 
 <body>
@@ -22,6 +20,17 @@
             <a-mixin id="cube-dancer" class="cube-dancer" geometry="primitive: box"
                      material="color: blue" height="3" radius="1" position="3 0 0">
             </a-mixin>
+
+
+            <img id="blob-a-texture" src="assets/objects/BlobA.png">
+            <img id="blob-b-texture" src="assets/objects/BlobB.png">
+
+            <a-asset-item id="blob-a" src="./assets/objects/BlobA.obj"></a-asset-item>
+            <a-asset-item id="blob-a-mtl" src="./assets/objects/BlobA.mtl"></a-asset-item>
+
+            <a-asset-item id="blob-b" src="./assets/objects/BlobB.obj"></a-asset-item>
+            <a-asset-item id="blob-b-mtl" src="./assets/objects/BlobB.mtl"></a-asset-item>
+
         </a-assets>
 
         <a-entity id='cameraWrapper' position="0 3.77 8.31">
@@ -50,7 +59,8 @@
                   layout="type: line; margin: 5; align: start" position="15 5 15" rotation="0 90 0">
         </a-entity>
 
-        <a-entity obj-model="obj: #blob-a;" src="./assets/objects/BlobALeuchten.png" position="15 5 15"></a-entity>
+        <a-entity class="sphere-dancer" obj-model="obj: #blob-a" position="15 5 15" material="src: #blob-a-texture"></a-entity>
+        <a-entity class="sphere-dancer" obj-model="obj: #blob-b" position="15 5 15" material="src: #blob-b-texture"></a-entity>
 
         <a-sky src="#sky" radius="10000"></a-sky>
     </a-scene>
