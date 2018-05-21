@@ -2,8 +2,8 @@
 This project is still in development!
 
 ## Introduction
-This repository is a fun project. The project is built upon the Audio Web API to analyse MediaSources and A-Frame.
-Audio data is used to manipulate geometry and behaviour of 3D objects over time.
+This repository is a fun project. The project is built upon the Audio Web API to analyse MediaSources and A-Frame.  
+Audio data is used to manipulate geometry and behaviour of 3D objects over time. 
 
 ## Installation
 Clone this repository and navigate to the root directory.  
