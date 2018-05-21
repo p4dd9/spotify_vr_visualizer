@@ -4,10 +4,46 @@
     <meta charset="UTF-8">
     <title>Hi</title>
 
-    <script src="./index.js" type="text/javascript" defer></script>
+    <script src="./index.js"></script>
 
 </head>
 <body>
-    <h1>hi</h1>
+    <a-scene inspector="url: https://aframe.io/releases/0.3.0/aframe-inspector.min.js">
+        <a-assets>
+            <a-mixin id="sphere-dancer" class="sphere-dancer" geometry="primitive: sphere"
+                     material="color: orange" height="3" radius="1" dance position="3 0 0">
+            </a-mixin>
+
+            <a-mixin id="cube-dancer" class="cube-dancer" geometry="primitive: box"
+                     material="color: blue" height="3" radius="1" dance position="3 0 0">
+            </a-mixin>
+        </a-assets>
+
+        <a-entity id='cameraWrapper' position="0 3.77 8.31">
+            <a-camera></a-camera>
+        </a-entity>
+
+        <a-entity entity-generator="mixin: sphere-dancer; num: 7"
+                  layout="type: line; margin: 5; align: start" position="-15 5 -15">
+        </a-entity>
+
+        <a-entity entity-generator="mixin: sphere-dancer; num: 5"
+                  layout="type: line; margin: 5; align: start" position="-15 5 15">
+        </a-entity>
+
+        <a-entity entity-generator="mixin: cube-dancer; num: 7"
+                  layout="type: line; margin: 5; align: start" position="-15 5 15" rotation="0 90 0">
+        </a-entity>
+
+        <a-entity entity-generator="mixin: sphere-dancer; num: 7"
+                  layout="type: line; margin: 5; align: start" position="15 5 15" rotation="0 90 0">
+        </a-entity>
+
+        <!--<a-sphere class="dancer" color="blue" height="3" radius="1" dance position="9 0 0"></a-sphere>-->
+
+        <a-sky color="white"></a-sky>
+    </a-scene>
+
+    <div id="mp3_player"></div>
 </body>
 </html>

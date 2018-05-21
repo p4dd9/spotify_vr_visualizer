@@ -49,6 +49,10 @@ module.exports = {
       {
         from: `${PATHS.src}/index.html`,
         to: `${PATHS.dist}/index.html`
+      },
+      {
+        from: `${PATHS.src}/audio`,
+        to: `${PATHS.dist}/audio`
       }
     ])
 
