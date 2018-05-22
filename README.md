@@ -1,5 +1,6 @@
 # A-Frame Audio Visualizer
-This project is still in development!
+This project is still in development!  
+**DO NOT USE ANY ASSETS (yet).**
 
 ## Introduction
 This repository is a fun project. The project is built upon the Audio Web API to analyse MediaSources and A-Frame.  

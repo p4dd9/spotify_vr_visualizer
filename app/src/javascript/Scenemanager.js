@@ -106,8 +106,13 @@ class SceneManager {
                 <a-box material="color: white" height="15" width="9" position="-25 7 0" rotation="0 90 0"></a-box>
                 <a-box material="color: white" height="15" width="9" position="25 7 0" rotation="0 90 0"></a-box>
                 
+                <a-text value="Speak to me" position="10 8 -12" width="25" align="center"></a-text>
                 <a-box id="track-box-1" class="audio-box" material="color: orange" depth="5" height="10" width="5" position="10 0 -12" rotation="0 0 0" audio-box="on: click"></a-box>
+                
+                <a-text value="A sea of writing" position="-16 8 -12" width="25" align="center"></a-text>
                 <a-box id="track-box-2" class="audio-box" material="color: blue" depth="5" height="10" width="5" position="-16 0 -12" rotation="0 0 0" audio-box="on: click"></a-box>
+                
+                 <a-text value="Matryoshka" position="0 8 -20" width="25" align="center"></a-text>
                 <a-box id="track-box-3" class="audio-box" material="color: pink" depth="5" height="10" width="5" position="0 0 -20" rotation="0 0 0" audio-box="on: click"></a-box>
                 
                 <a-sky material="color: black;" radius="10000"></a-sky>
