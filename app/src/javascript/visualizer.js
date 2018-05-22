@@ -1,4 +1,10 @@
 import injectAudioSource from './util/utils'
+import audioBox from 'a-components/audio-box'
+
+(function () {
+  audioBox();
+})();
+
 
 export default function initVisualizer() {
   // HINT: webkitAudioContext is deprecated - Safari supports that too!!
