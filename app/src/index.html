@@ -1,72 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Hi</title>
+    <head>
+        <meta charset="UTF-8">
+        <title>A-Frame Audio Visualizer</title>
+    </head>
 
-    <script src="./index.js"></script>
-
-</head>
-
-<body>
-    <a-scene inspector="url: https://aframe.io/releases/0.3.0/aframe-inspector.min.js">
-        <a-assets>
-            <img id="sky" src="./assets/images/sky.jpg">
-
-            <a-mixin id="sphere-dancer" class="sphere-dancer" geometry="primitive: sphere"
-                     material="color: orange" height="3" radius="1" position="3 0 0">
-            </a-mixin>
-
-            <a-mixin id="cube-dancer" class="cube-dancer" geometry="primitive: box"
-                     material="color: blue" height="3" radius="1" position="3 0 0">
-            </a-mixin>
-
-
-            <img id="blob-a-texture" src="assets/objects/BlobA.png">
-            <img id="blob-b-texture" src="assets/objects/BlobB.png">
-
-            <a-asset-item id="blob-a" src="./assets/objects/BlobA.obj"></a-asset-item>
-            <a-asset-item id="blob-a-mtl" src="./assets/objects/BlobA.mtl"></a-asset-item>
-
-            <a-asset-item id="blob-b" src="./assets/objects/BlobB.obj"></a-asset-item>
-            <a-asset-item id="blob-b-mtl" src="./assets/objects/BlobB.mtl"></a-asset-item>
-
-        </a-assets>
-
-        <a-entity id='cameraWrapper' position="0 3.77 8.31">
-            <a-camera></a-camera>
-        </a-entity>
-
-        <a-entity entity-generator="mixin: sphere-dancer; num: 7"
-                  layout="type: circle; radius: 5; angle: 50;" position="-15 5 -15">
-            <a-animation attribute="rotation" dur="5000" easing="linear"
-                         repeat="indefinite" to="0 360 360">
-            </a-animation>
-        </a-entity>
-
-        <a-entity entity-generator="mixin: sphere-dancer; num: 6"
-                  layout="type: line; margin: 5; align: start" position="-15 5 15">
-        </a-entity>
-
-        <a-entity entity-generator="mixin: cube-dancer; num: 30"
-                  layout="type: circle; radius: 10; angle: 30" position="-15 5 -15">
-            <a-animation attribute="rotation" dur="5000" easing="linear"
-                         repeat="indefinite" to="0 360 360">
-            </a-animation>
-        </a-entity>
-
-        <a-entity entity-generator="mixin: sphere-dancer; num: 6"
-                  layout="type: line; margin: 5; align: start" position="15 5 15" rotation="0 90 0">
-        </a-entity>
-
-        <a-entity class="sphere-dancer" obj-model="obj: #blob-a" position="15 5 15" material="src: #blob-a-texture"></a-entity>
-        <a-entity class="sphere-dancer" obj-model="obj: #blob-b" position="15 5 15" material="src: #blob-b-texture"></a-entity>
-
-        <a-sky src="#sky" radius="10000"></a-sky>
-    </a-scene>
-
-    <div id="audio-anchor">
-    </div>
-
-</body>
+    <body>
+        <div id="app"></div>
+        <div id="audio-anchor"></div>
+    </body>
 </html>

@@ -1,17 +1,12 @@
-import './stylesheets/main.scss'
-import 'aframe'
-import 'aframe-entity-generator-component'
-import 'aframe-layout-component'
-import * as util from 'javascript/utils'
-document.addEventListener('DOMContentLoaded', initVisualizer, false)
+import injectAudioSource from './util/utils'
 
-function initVisualizer() {
+export default function initVisualizer() {
   // HINT: webkitAudioContext is deprecated - Safari supports that too!!
   let context = new window.AudioContext || null
 
   // Initialize analyser and set MediaSource for AudioContext
   let analyser = context.createAnalyser()
-  let source = context.createMediaElementSource(util.injectAudioSource())
+  let source = context.createMediaElementSource(injectAudioSource())
 
   // Connect MediaSource as analyzer node
   source.connect(analyser)
@@ -33,6 +28,7 @@ function initVisualizer() {
 
     updateScaleGeometry(SPHERES, fbc_array, 'sphere-dancer')
     updateScaleGeometry(CUBES, fbc_array, 'cube-dancer')
+
   }
 
   // Update an array of A-Frame/DOMElements based on scaling properties
@@ -40,7 +36,7 @@ function initVisualizer() {
   function updateScaleGeometry(objects, fbc_array, type) {
     for (let i = 0; i < objects.length; i++) {
       const BAR = objects[i]
-      const DATA = -fbc_array[i] / 100;
+      const DATA = fbc_array[i] / 100;
 
       (type === 'sphere-dancer') ? BAR.setAttribute('scale', {
         x: DATA,

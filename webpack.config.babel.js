@@ -5,12 +5,13 @@ import OPTIONS from './config/serverOptions.js'
 import PATHS from './config/directories.js'
 import CleanWebpackPlugin from 'clean-webpack-plugin'
 import CopyWebpackPlugin from 'copy-webpack-plugin'
+import HtmlWebpackPlugin from 'html-webpack-plugin'
 
 module.exports = {
   context: __dirname + '/app',
-  entry: `${PATHS.src}/index.js`,
+  entry: `${PATHS.src}/bundle.js`,
   output: {
-    filename: 'index.js',
+    filename: 'bundle.min.js',
     path: PATHS.dist
   },
   resolve: {
@@ -50,11 +51,11 @@ module.exports = {
   plugins: [
     new BrowserSyncPlugin(OPTIONS),
     new CleanWebpackPlugin(PATHS.dist),
+    new HtmlWebpackPlugin({
+      inject: 'head',
+      template: `${PATHS.src}/index.html`,
+    }),
     new CopyWebpackPlugin([
-      {
-        from: `${PATHS.src}/index.html`,
-        to: `${PATHS.dist}/index.html`
-      },
       {
         from: `${PATHS.src}/assets`,
         to: `${PATHS.dist}/assets`
