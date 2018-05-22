@@ -36,7 +36,7 @@ export default function initVisualizer() {
   function updateScaleGeometry(objects, fbc_array, type) {
     for (let i = 0; i < objects.length; i++) {
       const BAR = objects[i]
-      const DATA = fbc_array[i] / 100;
+      const DATA = fbc_array[i] / 10000;
 
       (type === 'sphere-dancer') ? BAR.setAttribute('scale', {
         x: DATA,
