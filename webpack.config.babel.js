@@ -15,7 +15,7 @@ module.exports = {
     path: PATHS.dist
   },
   resolve: {
-    modules: ['node_modules', 'app/src'],
+    modules: ['node_modules', 'app/src', 'app/src/javascript'],
     extensions: ['.js', '.scss', '.css', '.html']
   },
   module: {
