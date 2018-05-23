@@ -15,7 +15,7 @@ module.exports = {
     path: PATHS.dist
   },
   resolve: {
-    modules: ['node_modules', 'app/src', 'app/src/javascript'],
+    modules: ['node_modules', 'app/src', 'app/src/javascript', 'app/src/a-templates'],
     extensions: ['.js', '.scss', '.css', '.html']
   },
   module: {
@@ -42,7 +42,7 @@ module.exports = {
           }
         }
         ]
-      }
+      },
     ]
   },
   stats: {
@@ -53,12 +53,15 @@ module.exports = {
     new CleanWebpackPlugin(PATHS.dist),
     new HtmlWebpackPlugin({
       inject: 'head',
-      template: `${PATHS.src}/index.html`,
+      template: `${PATHS.src}/index.html`
     }),
     new CopyWebpackPlugin([
       {
         from: `${PATHS.src}/assets`,
         to: `${PATHS.dist}/assets`
+      }, {
+        from: `${PATHS.src}/a-templates`,
+        to: `${PATHS.dist}/a-templates`,
       }
     ])
   ],

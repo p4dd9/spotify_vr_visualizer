@@ -1,4 +1,4 @@
-import injectAudioSource from './util/utils'
+import injectAudioSource from 'util/utils'
 import audioBox from 'a-components/audio-box'
 
 (function () {
