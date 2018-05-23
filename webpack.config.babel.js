@@ -15,7 +15,7 @@ module.exports = {
     path: PATHS.dist
   },
   resolve: {
-    modules: ['node_modules', 'app/src', 'app/src/javascript', 'app/src/a-templates'],
+    modules: ['node_modules', 'app/src', 'app/src/javascript', 'app/src/templates'],
     extensions: ['.js', '.scss', '.css', '.html']
   },
   module: {
@@ -60,8 +60,8 @@ module.exports = {
         from: `${PATHS.src}/assets`,
         to: `${PATHS.dist}/assets`
       }, {
-        from: `${PATHS.src}/a-templates`,
-        to: `${PATHS.dist}/a-templates`,
+        from: `${PATHS.src}/templates`,
+        to: `${PATHS.dist}/templates`,
       }
     ])
   ],

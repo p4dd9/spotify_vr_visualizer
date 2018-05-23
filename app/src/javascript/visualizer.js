@@ -1,10 +1,9 @@
-import injectAudioSource from 'util/utils'
-import audioBox from 'a-components/audio-box'
+import AudioManager from './audio/AudioManager'
+import initAudioCube from 'components/init-audio-cube'
 
 (function () {
-  audioBox();
+  initAudioCube();
 })();
-
 
 export default function initVisualizer() {
   // HINT: webkitAudioContext is deprecated - Safari supports that too!!
@@ -12,7 +11,7 @@ export default function initVisualizer() {
 
   // Initialize analyser and set MediaSource for AudioContext
   let analyser = context.createAnalyser()
-  let source = context.createMediaElementSource(injectAudioSource())
+  let source = context.createMediaElementSource(AudioManager.injectAudioSource())
 
   // Connect MediaSource as analyzer node
   source.connect(analyser)

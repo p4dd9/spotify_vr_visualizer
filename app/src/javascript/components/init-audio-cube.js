@@ -1,6 +1,6 @@
-import AUDIO_TAGS from 'config/audioTags'
+import AudioManager from '../audio/AudioManager'
 
-export default function audioBox() {
+export default function initAudioCube() {
   AFRAME.registerComponent('audio-box', {
     schema: {
       on: { type: 'string' }
@@ -17,19 +17,19 @@ export default function audioBox() {
 
         switch (el.id) {
           case 'track-box-1': {
-            AudioTag.setAttribute('src', AUDIO_TAGS[0].src)
+            AudioTag.setAttribute('src', AudioManager.getAudioSources()[0].src)
             break
           }
           case 'track-box-2': {
-            AudioTag.setAttribute('src', AUDIO_TAGS[1].src)
+            AudioTag.setAttribute('src', AudioManager.getAudioSources()[1].src)
             break
           }
           case 'track-box-3': {
-            AudioTag.setAttribute('src', AUDIO_TAGS[2].src)
+            AudioTag.setAttribute('src', AudioManager.getAudioSources()[2].src)
             break
           }
           case 'track-box-4': {
-            AudioTag.setAttribute('src', AUDIO_TAGS[3].src)
+            AudioTag.setAttribute('src', AudioManager.getAudioSources()[3].src)
             break
           }
           default:
