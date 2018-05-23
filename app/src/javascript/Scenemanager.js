@@ -41,11 +41,11 @@ class SceneManager {
                 </a-assets>
           
                 <a-entity id='camera' position="0 3.77 13.42" camera look-controls>
-                 <a-entity cursor="fuse: true; fuseTimeout: 500"
-                    position="0 0 -1"
-                    geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
-                    material="color: black; shader: flat">
-                  </a-entity>
+                    <a-entity cursor="fuse: true; fuseTimeout: 500"
+                        position="0 0 -1"
+                        geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+                        material="color: black; shader: flat">
+                    </a-entity>
                 </a-entity>
                 
                 <!--<a-entity entity-generator="mixin: sphere-dancer; num: 7"
@@ -106,14 +106,21 @@ class SceneManager {
                 <a-box material="color: white" height="15" width="9" position="-25 7 0" rotation="0 90 0"></a-box>
                 <a-box material="color: white" height="15" width="9" position="25 7 0" rotation="0 90 0"></a-box>
                 
-                <a-text value="Speak to me" position="10 8 -12" width="25" align="center"></a-text>
-                <a-box id="track-box-1" class="audio-box" material="color: orange" depth="5" height="10" width="5" position="10 0 -12" rotation="0 0 0" audio-box="on: click"></a-box>
+                <a-text value="Speak to me" position="20 8 -20" width="25" align="center"></a-text>
+                <a-text value="Speak to me" position="20 8 -20" width="25" align="center" rotation="0 180 0"></a-text>
+                <a-box id="track-box-1" class="audio-box" material="color: orange" depth="5" height="10" width="5" position="20 0 -20" rotation="0 45 0" audio-box="on: click"></a-box>
                 
-                <a-text value="A sea of writing" position="-16 8 -12" width="25" align="center"></a-text>
-                <a-box id="track-box-2" class="audio-box" material="color: blue" depth="5" height="10" width="5" position="-16 0 -12" rotation="0 0 0" audio-box="on: click"></a-box>
+                <a-text value="A sea of writing" position="20 8 20" width="25" align="center"></a-text>
+                <a-text value="A sea of writing" position="20 8 20" width="25" align="center" rotation="0 180 0"></a-text>
+                <a-box id="track-box-2" class="audio-box" material="color: blue" depth="5" height="10" width="5" position="20 0 20" rotation="0 45 0" audio-box="on: click"></a-box>
                 
-                 <a-text value="Matryoshka" position="0 8 -20" width="25" align="center"></a-text>
-                <a-box id="track-box-3" class="audio-box" material="color: pink" depth="5" height="10" width="5" position="0 0 -20" rotation="0 0 0" audio-box="on: click"></a-box>
+                <a-text value="Matryoshka" position="-20 8 20" width="25" align="center"></a-text>
+                <a-text value="Matryoshka" position="-20 8 20" width="25" align="center" rotation="0 180 0"></a-text>
+                <a-box id="track-box-3" class="audio-box" material="color: pink" depth="5" height="10" width="5" position="-20 0 20" rotation="0 45 0" audio-box="on: click"></a-box>
+                
+                <a-text value="Bop" position="-20 8 -20" width="25" align="center"></a-text>
+                <a-text value="Bop" position="-20 8 -20" width="25" align="center" rotation="0 180 0"></a-text>
+                <a-box id="track-box-4" class="audio-box" material="color: pink" depth="5" height="10" width="5" position="-20 0 -20" rotation="0 45 0" audio-box="on: click"></a-box>
                 
                 <a-sky material="color: black;" radius="10000"></a-sky>
                 

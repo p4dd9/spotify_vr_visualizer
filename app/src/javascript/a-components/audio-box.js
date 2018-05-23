@@ -28,6 +28,10 @@ export default function audioBox() {
             AudioTag.setAttribute('src', AUDIO_TAGS[2].src)
             break
           }
+          case 'track-box-4': {
+            AudioTag.setAttribute('src', AUDIO_TAGS[3].src)
+            break
+          }
           default:
             alert('Yikes, i dont know thiz box.')
         }
