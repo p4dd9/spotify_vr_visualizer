@@ -1,7 +1,7 @@
-const AssetPaths = {
+const ASSET_PATHS = {
   audio: '../assets/audio/',
   images: '../assets/images/',
   objects: '../assets/objects/'
 }
 
-export default Object.freeze(AssetPaths);
+export default Object.freeze(ASSET_PATHS);

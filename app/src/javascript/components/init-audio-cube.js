@@ -1,4 +1,4 @@
-import AudioManager from '../audio/AudioManager'
+import Audio_Manager from '../audio/AudioManager'
 
 export default function initAudioCube() {
   AFRAME.registerComponent('audio-box', {
@@ -12,24 +12,23 @@ export default function initAudioCube() {
 
       el.addEventListener(data.on, function() {
         const AudioTag = document.getElementsByTagName('audio')[0]
-
         AudioTag.pause()
 
         switch (el.id) {
           case 'track-box-1': {
-            AudioTag.setAttribute('src', AudioManager.getAudioSources()[0].src)
+            AudioTag.setAttribute('src', Audio_Manager.getAudioSources()[0].src)
             break
           }
           case 'track-box-2': {
-            AudioTag.setAttribute('src', AudioManager.getAudioSources()[1].src)
+            AudioTag.setAttribute('src', Audio_Manager.getAudioSources()[1].src)
             break
           }
           case 'track-box-3': {
-            AudioTag.setAttribute('src', AudioManager.getAudioSources()[2].src)
+            AudioTag.setAttribute('src', Audio_Manager.getAudioSources()[2].src)
             break
           }
           case 'track-box-4': {
-            AudioTag.setAttribute('src', AudioManager.getAudioSources()[3].src)
+            AudioTag.setAttribute('src', Audio_Manager.getAudioSources()[3].src)
             break
           }
           default:

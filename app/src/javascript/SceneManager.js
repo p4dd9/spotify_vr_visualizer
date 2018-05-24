@@ -1,10 +1,11 @@
 import ASSET_PATH from 'config/assetPaths'
 import TEMPLATES from 'config/templates'
+import AudioManager from './audio/AudioManager'
 
 class SceneManager {
-  static initScene() {
+  static getScene() {
     return `<a-scene inspector="url: https://aframe.io/releases/0.3.0/aframe-inspector.min.js">
- 
+        
         <!-- Asset Management -->
         <a-assets>
 
@@ -93,7 +94,42 @@ class SceneManager {
   }
 
   static injectScene() {
-    document.getElementById('app').insertAdjacentHTML('afterend', SceneManager.initScene())
+    document.getElementById('app').insertAdjacentHTML('afterend', SceneManager.getScene())
+  }
+
+  static initVisualizer() {
+    // Get A-Frame components by ClassName
+    const SPHERES = document.getElementsByClassName('sphere-dancer')
+    const CUBES = document.getElementsByClassName('cube-dancer')
+
+    frameLooper()
+
+    // Looping function for rendering
+    function frameLooper() {
+      window.requestAnimationFrame(frameLooper)
+
+      // Get frequency domain data
+      let fbc_array = new Uint8Array(AudioManager.analyser.frequencyBinCount)
+      AudioManager.analyser.getByteFrequencyData(fbc_array)
+
+      updateScaleGeometry(SPHERES, fbc_array, 'sphere-dancer')
+      updateScaleGeometry(CUBES, fbc_array, 'cube-dancer')
+    }
+
+    // Update an array of A-Frame/DOMElements based on scaling properties
+    // and frequency domain data
+    function updateScaleGeometry(objects, fbc_array, type) {
+      for (let i = 0; i < objects.length; i++) {
+        const BAR = objects[i]
+        const DATA = fbc_array[i] / 10000;
+
+        (type === 'sphere-dancer') ? BAR.setAttribute('scale', {
+          x: DATA,
+          y: DATA,
+          z: DATA
+        }) : BAR.setAttribute('scale', { x: 1, y: DATA, z: 1 })
+      }
+    }
   }
 }
 

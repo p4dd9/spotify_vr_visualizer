@@ -52,7 +52,6 @@ module.exports = {
     new BrowserSyncPlugin(OPTIONS),
     new CleanWebpackPlugin(PATHS.dist),
     new HtmlWebpackPlugin({
-      inject: 'head',
       template: `${PATHS.src}/index.html`
     }),
     new CopyWebpackPlugin([

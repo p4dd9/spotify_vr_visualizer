@@ -1,7 +1,23 @@
 import ASSET_PATHS from '../config/assetPaths'
 import AUDIO_SOURCES from './audioSources'
 
-export default class AudioManager {
+class AudioManager {
+  constructor() {
+    if (!AudioManager.instance) {
+      this.name = 'Heideltraut'
+      this.context = new window.AudioContext || null
+      this.analyser = this.context.createAnalyser()
+      this.source = this.context.createMediaElementSource(AudioManager.injectAudioSource())
+
+      this.source.connect(this.analyser)
+      this.analyser.connect(this.context.destination)
+
+      AudioManager.instance = this
+    }
+
+    return AudioManager.instance
+  }
+
   // Injects audio tag in the current DOM and return an AUDIO instance
   static injectAudioSource() {
     const AUDIO = new Audio()
@@ -16,7 +32,10 @@ export default class AudioManager {
     return AUDIO
   }
 
-  static getAudioSources() {
-    return AUDIO_SOURCES;
+  getAudioSources() {
+    return AUDIO_SOURCES
   }
 }
+
+const Audio_Manager = new AudioManager()
+export default Audio_Manager

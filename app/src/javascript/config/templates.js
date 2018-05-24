@@ -1,5 +1,5 @@
 const TEMPLATES = {
-  audioBox: "./templates/audioBox.hbs",
+  audioBox: "./templates/jukebox.hbs",
   sign: "./templates/sign.hbs",
 };
 
