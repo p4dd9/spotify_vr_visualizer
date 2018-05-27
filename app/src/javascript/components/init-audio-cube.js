@@ -32,7 +32,7 @@ export default function initAudioCube() {
             break
           }
           default:
-            alert('Yikes, i dont know thiz box.')
+            alert('Yikes! Cannot find requested jukebox.')
         }
 
         AudioTag.play()

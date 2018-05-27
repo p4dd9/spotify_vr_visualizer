@@ -1,11 +1,12 @@
 require('babel-register')
 
 import BrowserSyncPlugin from 'browser-sync-webpack-plugin'
-import OPTIONS from './config/serverOptions.js'
-import PATHS from './config/directories.js'
 import CleanWebpackPlugin from 'clean-webpack-plugin'
 import CopyWebpackPlugin from 'copy-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
+
+import OPTIONS from './config/serverOptions.js'
+import PATHS from './config/directories.js'
 
 module.exports = {
   context: __dirname + '/app',
@@ -43,6 +44,7 @@ module.exports = {
         }
         ]
       },
+      { test: /\.hbs/, loader: 'handlebars-loader' }
     ]
   },
   stats: {
@@ -60,7 +62,7 @@ module.exports = {
         to: `${PATHS.dist}/assets`
       }, {
         from: `${PATHS.src}/templates`,
-        to: `${PATHS.dist}/templates`,
+        to: `${PATHS.dist}/templates`
       }
     ])
   ],

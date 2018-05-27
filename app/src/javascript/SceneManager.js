@@ -94,7 +94,9 @@ class SceneManager {
   }
 
   static injectScene() {
-    document.getElementById('app').insertAdjacentHTML('afterend', SceneManager.getScene())
+    const ANCHOR = document.getElementById('app')
+    ANCHOR.insertAdjacentHTML('afterend', SceneManager.getScene())
+    ANCHOR.remove()
   }
 
   static initVisualizer() {
