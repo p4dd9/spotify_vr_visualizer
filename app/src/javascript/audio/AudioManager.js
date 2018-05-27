@@ -37,5 +37,4 @@ class AudioManager {
   }
 }
 
-const Audio_Manager = new AudioManager()
-export default Audio_Manager
+export default new AudioManager()

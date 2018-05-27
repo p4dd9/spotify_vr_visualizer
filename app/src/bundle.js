@@ -4,16 +4,21 @@ import 'aframe-entity-generator-component'
 import 'aframe-layout-component'
 import 'aframe-template-component'
 import SceneManager from 'javascript/SceneManager'
-import Audio_Manager from 'javascript/audio/AudioManager'
-import initAudioCube from 'components/init-audio-cube'
-
-(function () {
-  initAudioCube();
-})();
+import AudioManager from 'javascript/audio/AudioManager'
+import Component from 'javascript/components/Component'
 
 document.addEventListener('DOMContentLoaded', function() {
-  console.log(`I am you friendly AudioManager called ${Audio_Manager.name}.`)
 
+  // Say Hello!
+  console.log(`I am you friendly AudioManager called ${AudioManager.name}.`)
+
+  // Register all Components
+  Component.registerAllComponents()
+
+  // Inject A-Frame scene in DOM
   SceneManager.injectScene()
+
+  // Initialize Audio Visualization
   SceneManager.initVisualizer()
+
 })
