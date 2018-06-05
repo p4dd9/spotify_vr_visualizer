@@ -11,23 +11,26 @@ class SceneManager {
 
             <!-- Textures and Images -->
             <img id="sky" src="${ASSET_PATH.images}sky.jpg">
+            
+            <!-- Blob Textures --> 
             <img id="blob-a-texture" src="${ASSET_PATH.objects}BlobA.png">
             <img id="blob-b-texture" src="${ASSET_PATH.objects}BlobB.png">
+            
+            <!-- CreativityRulesIcons -->
             <img id="cr_18" src="${ASSET_PATH.images}cr_18_white.png">
+            
+            <!-- University Logos -->
             <img id="mma" src="${ASSET_PATH.images}mma.png">
             <img id="mmt" src="${ASSET_PATH.images}mmt.png">
 
             <!-- 3D Objects -->
             <a-asset-item id="blob-a" src="${ASSET_PATH.objects}BlobA.obj"></a-asset-item>
-            <a-asset-item id="blob-a-mtl" src="${ASSET_PATH.objects}BlobA.mtl"></a-asset-item>
-
             <a-asset-item id="blob-b" src="${ASSET_PATH.objects}BlobB.obj"></a-asset-item>
-            <a-asset-item id="blob-b-mtl" src="${ASSET_PATH.objects}BlobB.mtl"></a-asset-item>
 
         </a-assets>
 
         <!-- Camera -->
-        <a-entity id='camera' position="0 3.77 13.42" camera look-controls>
+        <a-entity id='camera' position="0 3.77 13.42" camera look-controls wasd-controls>
             <a-entity cursor="fuse: true; fuseTimeout: 500"
                       position="0 0 -1"
                       geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"

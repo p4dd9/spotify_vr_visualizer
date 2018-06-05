@@ -6,23 +6,24 @@ import CleanWebpackPlugin from 'clean-webpack-plugin'
 import CopyWebpackPlugin from 'copy-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 
-const PATHS = Object.freeze({
+const WEBPACK = Object.freeze({
+  context: path.resolve(__dirname, 'app'),
   src: path.resolve(__dirname, 'app/src'),
   dist: path.resolve(__dirname, 'app/dist'),
 });
 
-
 module.exports = {
-  context: __dirname + '/app',
-  entry: `${PATHS.src}/bundle.js`,
+  context: WEBPACK.context,
+  entry: `${WEBPACK.src}/bundle.js`,
   output: {
     filename: 'bundle.min.js',
-    path: PATHS.dist
+    path: WEBPACK.dist
   },
   resolve: {
     modules: ['node_modules', 'app/src', 'app/src/javascript', 'app/src/templates'],
     extensions: ['.js', '.scss', '.css', '.html']
   },
+  mode: 'development',
   module: {
     rules: [
       {
@@ -55,17 +56,16 @@ module.exports = {
     colors: true
   },
   plugins: [
-    new CleanWebpackPlugin(PATHS.dist),
     new HtmlWebpackPlugin({
-      template: `${PATHS.src}/index.html`
+      template: `${WEBPACK.src}/index.html`
     }),
     new CopyWebpackPlugin([
       {
-        from: `${PATHS.src}/assets`,
-        to: `${PATHS.dist}/assets`
+        from: `${WEBPACK.src}/assets`,
+        to: `${WEBPACK.dist}/assets`
       }, {
-        from: `${PATHS.src}/templates`,
-        to: `${PATHS.dist}/templates`
+        from: `${WEBPACK.src}/templates`,
+        to: `${WEBPACK.dist}/templates`
       }
     ])
   ],

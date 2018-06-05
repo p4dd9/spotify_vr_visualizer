@@ -8,6 +8,7 @@
   },
   "scripts": {
     "start:dev": "webpack-dev-server",
+    "start:build": "webpack",
     "test": "yeah ... no",
     "precommit": "pretty-quick --staged"
   },
