@@ -59,6 +59,7 @@ class SceneManager {
                          repeat="indefinite" to="0 360 0">
             </a-animation>
         </a-entity>
+        
         <a-entity class="sphere-dancer" obj-model="obj:#blob-a" position="-27.78 22.72 -58.44" material="src:#blob-a-texture">
             <a-animation attribute="rotation" dur="5000" easing="linear"
                          repeat="indefinite" to="0 360 0">

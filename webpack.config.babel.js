@@ -1,12 +1,16 @@
 require('babel-register')
 
-import BrowserSyncPlugin from 'browser-sync-webpack-plugin'
+const path = require('path');
+
 import CleanWebpackPlugin from 'clean-webpack-plugin'
 import CopyWebpackPlugin from 'copy-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 
-import OPTIONS from './config/serverOptions.js'
-import PATHS from './config/directories.js'
+const PATHS = Object.freeze({
+  src: path.resolve(__dirname, 'app/src'),
+  dist: path.resolve(__dirname, 'app/dist'),
+});
+
 
 module.exports = {
   context: __dirname + '/app',
@@ -51,7 +55,6 @@ module.exports = {
     colors: true
   },
   plugins: [
-    new BrowserSyncPlugin(OPTIONS),
     new CleanWebpackPlugin(PATHS.dist),
     new HtmlWebpackPlugin({
       template: `${PATHS.src}/index.html`
