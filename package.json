@@ -24,6 +24,7 @@
   "homepage": "https://github.com/p4dd9/spotify_vr_visualizer#readme",
   "devDependencies": {
     "aframe": "^0.8.2",
+    "aframe-animation-component": "^4.2.0",
     "aframe-entity-generator-component": "^3.0.1",
     "aframe-layout-component": "^4.3.1",
     "aframe-template-component": "^3.2.1",

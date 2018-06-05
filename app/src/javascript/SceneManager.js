@@ -39,10 +39,12 @@ class SceneManager {
         </a-entity>
 
         <!-- Animated CR_18 Cube -->
-        <a-entity geometry="primitive: box; depth: 5; height: 5; width: 5" material="shader: standard; src: #cr_18;" position="0 5 0">
-            <a-animation attribute="rotation" dur="10000" easing="linear"
-                         repeat="indefinite" to="360 360 360">
-            </a-animation>
+        <a-entity geometry="primitive: box; depth: 5; height: 5; width: 5" material="shader: standard; src: #cr_18;" position="0 5 0"
+                  animation="property: rotation;
+                                       dur: 10000;
+                                       easing: linear; 
+                                       loop: true; 
+                                       to: 360 360 360">
         </a-entity>
 
         <!-- Dancing Blobs -->
@@ -57,16 +59,20 @@ class SceneManager {
         <a-entity class="sphere-dancer" obj-model="obj:#blob-a" position="56.55 36.09 56.61" material="src:#blob-a-texture"></a-entity>
         <a-entity class="sphere-dancer" obj-model="obj:#blob-b" position="56.55 7.77 56.61" material="src:#blob-b-texture"></a-entity>
         
-        <a-entity class="sphere-dancer" obj-model="obj:#blob-b" position="-49.91 25.16 40.7" material="src:#blob-b-texture">
-            <a-animation attribute="rotation" dur="5000" easing="linear"
-                         repeat="indefinite" to="0 360 0">
-            </a-animation>
+        <a-entity class="sphere-dancer" obj-model="obj:#blob-b" position="-49.91 25.16 40.7"  material="src:#blob-b-texture"
+                  animation="property: rotation;
+                             dur: 10000;
+                             easing: linear; 
+                             loop: true; 
+                             to: 360 360 360">
         </a-entity>
         
-        <a-entity class="sphere-dancer" obj-model="obj:#blob-a" position="-27.78 22.72 -58.44" material="src:#blob-a-texture">
-            <a-animation attribute="rotation" dur="5000" easing="linear"
-                         repeat="indefinite" to="0 360 0">
-            </a-animation>
+        <a-entity class="sphere-dancer" obj-model="obj:#blob-a" position="-27.78 22.72 -58.44" material="src:#blob-a-texture"
+                  animation="property: rotation;
+                             dur: 10000;
+                             easing: linear; 
+                             loop: true; 
+                             to: 360 360 360">
         </a-entity>
 
         <!-- Ground -->
