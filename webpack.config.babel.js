@@ -2,7 +2,6 @@ require('babel-register')
 
 const path = require('path');
 
-import CleanWebpackPlugin from 'clean-webpack-plugin'
 import CopyWebpackPlugin from 'copy-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 

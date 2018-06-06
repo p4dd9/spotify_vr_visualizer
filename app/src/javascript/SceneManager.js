@@ -4,7 +4,7 @@ import AudioManager from './audio/AudioManager'
 
 class SceneManager {
   static getScene() {
-    return `<a-scene inspector="url: https://aframe.io/releases/0.3.0/aframe-inspector.min.js">
+    return `<a-scene inspector="url: https://aframe.io/releases/0.3.0/aframe-inspector.min.js" stats>
         
         <!-- Asset Management -->
         <a-assets>
@@ -45,6 +45,7 @@ class SceneManager {
                                        easing: linear; 
                                        loop: true; 
                                        to: 360 360 360">
+                   <a-entity fps-counter></a-entity>
         </a-entity>
 
         <!-- Dancing Blobs -->

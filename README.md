@@ -10,9 +10,10 @@ Audio data is used to manipulate geometry and behaviour of 3D objects over time.
 Clone this repository and navigate to the root directory.  
 Open terminal and run ```npm install```
 
-## Start
+## Scripts
 Navigate to the root directory of this project.
-Open terminal in this directory and run ```npm start```
+Open terminal in this directory and run ```npm run start:dev```  
+Building works quiet similar, run ```npm run start:build``` and navigate to the dist folder created in ```/app```
 
 ## Tips
 **WINDOWS:** Inspect a 3D scene hit ```<ctrl> + <alt> + <i>``` in the browser. 

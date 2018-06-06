@@ -1,8 +1,9 @@
 import './stylesheets/main.scss'
+
 import 'aframe'
-import 'aframe-entity-generator-component'
 import 'aframe-template-component'
 import 'aframe-animation-component'
+
 import SceneManager from 'javascript/SceneManager'
 import AudioManager from 'javascript/audio/AudioManager'
 import Component from 'javascript/components/Component'
