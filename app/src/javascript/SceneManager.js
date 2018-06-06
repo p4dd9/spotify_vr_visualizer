@@ -38,11 +38,11 @@ class SceneManager {
             </a-entity>
         </a-entity>
         
-        <!-- Vive-Controls -->
-        <a-entity laser-controls="hand: left" raycaster="objects: .audio-box" line="color: #EF2D5E; opacity: 0.75"></a-entity>
-        <a-entity laser-controls="hand: right" raycaster="objects: .audio-box" line="color: #EF2D5E; opacity: 0.75"></a-entity>
+         <!-- Vive-Controls -->
+        <a-entity laser-controls="hand: left" tracked-controls="idPrefix: OpenVR" raycaster="objects: .audio-box" line="color: #EF2D5E; opacity: 0.75"></a-entity>
+        <a-entity laser-controls="hand: right" tracked-controls="idPrefix: OpenVR" raycaster="objects: .audio-box" line="color: #EF2D5E; opacity: 0.75"></a-entity>
 
-        <a-entity scale="0.5 0.5 0.5">
+        <a-entity scale="0.5 0.5 0.5" >
         <!-- Animated CR_18 Cube -->
         <a-entity geometry="primitive: box; depth: 5; height: 5; width: 5" material="shader: standard; src: #cr_18;" position="0 5 0"
                   animation="property: rotation;
@@ -82,7 +82,7 @@ class SceneManager {
         </a-entity>
 
         <!-- Ground -->
-        <a-cylinder radius="50" color="red" height="1"></a-cylinder>
+        <a-cylinder radius="50" color="red" height="1 position="0 -0.50 0"></a-cylinder>
 
         <!-- Arch -->
         <a-torus color="white" arc="180" radius="50" radius-tubular="10" positiong="0 0 0"></a-torus>

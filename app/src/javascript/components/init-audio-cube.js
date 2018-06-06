@@ -10,9 +10,10 @@ export default function initAudioCube() {
       const data = this.data
       const el = this.el
 
-      el.addEventListener(data.on, function() {
+      el.addEventListener(data.on, function(e) {
         const AudioTag = document.getElementsByTagName('audio')[0]
         AudioTag.pause()
+        console.log(e)
 
         switch (el.id) {
           case 'track-box-1': {
