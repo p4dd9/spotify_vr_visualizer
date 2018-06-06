@@ -37,7 +37,12 @@ class SceneManager {
                       material="color: black; shader: flat">
             </a-entity>
         </a-entity>
+        
+        <!-- Vive-Controls -->
+        <a-entity laser-controls="hand: left" raycaster="objects: .audio-box" line="color: #EF2D5E; opacity: 0.75"></a-entity>
+        <a-entity laser-controls="hand: right" raycaster="objects: .audio-box" line="color: #EF2D5E; opacity: 0.75"></a-entity>
 
+        <a-entity scale="0.5 0.5 0.5">
         <!-- Animated CR_18 Cube -->
         <a-entity geometry="primitive: box; depth: 5; height: 5; width: 5" material="shader: standard; src: #cr_18;" position="0 5 0"
                   animation="property: rotation;
@@ -101,6 +106,7 @@ class SceneManager {
         <!-- Lights -->
         <a-entity light="type: spot; angle: 25; penumbra:0.75;" position="0 20 0;" target="src#cr_18" rotation="270 0 0"></a-entity>
         <a-entity light="type: ambient; color: #CCC"></a-entity>
+        </a-entity>
     </a-scene>`
   }
 

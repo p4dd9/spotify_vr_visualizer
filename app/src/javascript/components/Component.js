@@ -1,4 +1,5 @@
-import initAudioCube from 'components/init-audio-cube'
+import initAudioCube from './init-audio-cube'
+import initColliderCheck from './collider-check'
 
 export default class Component {
   static registerAllComponents() {
@@ -7,5 +8,6 @@ export default class Component {
 
   static registerAudioCubeComponent() {
     initAudioCube()
+    initColliderCheck()
   }
 }

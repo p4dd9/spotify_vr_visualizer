@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "start:dev": "webpack-dev-server",
+    "start:dev": "webpack-dev-server --watch",
     "start:build": "webpack",
     "test": "yeah ... no",
     "precommit": "pretty-quick --staged"
