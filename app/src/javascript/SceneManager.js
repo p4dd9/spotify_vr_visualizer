@@ -30,18 +30,20 @@ class SceneManager {
         </a-assets>
 
         <!-- Camera -->
-        <a-entity id='camera' position="0 3.77 13.42" camera look-controls wasd-controls>
-            <a-entity cursor="fuse: true; fuseTimeout: 500"
-                      position="0 0 -1"
-                      geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
-                      material="color: black; shader: flat">
-            </a-entity>
+        <a-entity id="camera-rig" position="0 3.77 13.42" look-controls>
+          <a-entity id='camera' camera  >
+              <a-entity cursor="fuse: true; fuseTimeout: 500"
+                        position="0 0 -1"
+                        geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+                        material="color: black; shader: flat">
+              </a-entity>
+          </a-entity>
+          
+            <!-- Vive-Controls -->
+          <a-entity laser-controls="hand: left" raycaster="objects: .audio-box" line="color: #EF2D5E; opacity: 0.75"></a-entity>
+          <a-entity laser-controls="hand: right" raycaster="objects: .audio-box" line="color: #EF2D5E; opacity: 0.75" walk-controls></a-entity>
         </a-entity>
         
-         <!-- Vive-Controls -->
-        <a-entity laser-controls="hand: left" tracked-controls="idPrefix: OpenVR" raycaster="objects: .audio-box" line="color: #EF2D5E; opacity: 0.75"></a-entity>
-        <a-entity laser-controls="hand: right" tracked-controls="idPrefix: OpenVR" raycaster="objects: .audio-box" line="color: #EF2D5E; opacity: 0.75"></a-entity>
-
         <a-entity scale="0.5 0.5 0.5" >
         <!-- Animated CR_18 Cube -->
         <a-entity geometry="primitive: box; depth: 5; height: 5; width: 5" material="shader: standard; src: #cr_18;" position="0 5 0"
