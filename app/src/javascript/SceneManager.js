@@ -30,7 +30,7 @@ class SceneManager {
         </a-assets>
 
         <!-- Camera -->
-        <a-entity id="camera-rig" position="0 3.77 13.42" look-controls>
+        <a-entity id="camera-rig" position="0 3.77 13.42" look-controls wasd-controls>
           <a-entity id='camera' camera  >
               <a-entity cursor="fuse: true; fuseTimeout: 500"
                         position="0 0 -1"
