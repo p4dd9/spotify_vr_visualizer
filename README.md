@@ -1,10 +1,7 @@
-# A-Frame Audio Visualizer
-This project is still in development!  
-**DO NOT USE ANY ASSETS (yet).**
+# Prototypical A-Frame Audio Visualizer
 
 ## Introduction
-This repository is a fun project. The project is built upon the Audio Web API to analyse MediaSources and A-Frame.  
-Audio data is used to manipulate geometry and behaviour of 3D objects over time. 
+This repository covers an A-Frame based prototype to show how the Web Audio API can manipulate the size of 3D objects. (part of my very first talk in 2018 @https://www.creativityruleshallein.com/)
 
 ## Installation
 Clone this repository and navigate to the root directory.  
@@ -12,8 +9,8 @@ Open terminal and run ```npm install```
 
 ## Scripts
 Navigate to the root directory of this project.
-Open terminal in this directory and run ```npm run start:dev```  
-Building works quiet similar, run ```npm run start:build``` and navigate to the dist folder created in ```/app```
+Local Development: Open terminal in the root directory and run ```npm run start:dev```  
+Build: Run ```npm run start:build``` and navigate to the dist folder created in ```/app```
 
 ## Tips
 **WINDOWS:** Inspect a 3D scene hit ```<ctrl> + <alt> + <i>``` in the browser. 
